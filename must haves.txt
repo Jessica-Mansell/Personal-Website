@@ -1,0 +1,13 @@
+Must Haves for Personal Website:
+
+- Blog-like
+- Bird animation 
+- Colors match Resume
+- About Me page
+- Portfolio Examples:
+	* Mail App from Django class
+	* Python Adventure Game
+	* BirdLingo from CS50
+- Links to:
+	* LinkedIn Profile
+	* GitHub Profile
