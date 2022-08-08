@@ -3,6 +3,9 @@ Must Haves for Personal Website:
 - Blog-like
 - Bird animation 
 - Colors match Resume
+	* light pink: #dba4cb
+	* dark grey: #636363
+	* white
 - About Me page
 - Portfolio Examples:
 	* Mail App from Django class
@@ -11,3 +14,7 @@ Must Haves for Personal Website:
 - Links to:
 	* LinkedIn Profile
 	* GitHub Profile
+
+
+Overall idea:
+Create a personal website which is also a blog in which I will cover topics I'm interested in as well as catalog my journey into software engineering. 

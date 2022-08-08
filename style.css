@@ -1,0 +1,13 @@
+body {
+    background: #636363;
+    color: #dba4cb;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    display: block;
+    line-height: 1;
+    text-align: left;
+}
+
+div {
+    display: block;
+}
