@@ -7,7 +7,16 @@
     <title>Jessica's Tech Blog</title>
 </head>
 <body>
-    <h1>Jessica&#39s Tech Blog</h1>
+    <h1>Post</h1>
+
+    <ul>
+    {% for post in object_list %}
+        <!--Pull anything from the Post model to display whatever needed from the post-->
+        <li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }}
+        {{ post.author.last_name }}<br/>
+        {{ post.body }}</li>
+    {% endfor %}
+    </ul>
 </body>
 </html>
 
