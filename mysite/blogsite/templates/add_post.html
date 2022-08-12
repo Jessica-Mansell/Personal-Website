@@ -6,10 +6,13 @@
 <h1>Add Post</h1>
 <br/>
 <br/>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-secondary">Post</button>
-</form>
+<div class="mb-3">
+    <form method="POST">
+        {% csrf_token %}
+        <!--as_p = html element of <p> for paragraph. can also use as_ul or as_table-->
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Post</button>
+    </form>
+</div>
 
 {% endblock %}
