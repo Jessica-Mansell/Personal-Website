@@ -19,4 +19,7 @@ from django.urls import include, path
 urlpatterns = [
     path('', include('blogsite.urls')),
     path('admin/', admin.site.urls),
+    # link to the contrib.auth documentation https://docs.djangoproject.com/en/4.1/ref/contrib/auth/
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
 ]
