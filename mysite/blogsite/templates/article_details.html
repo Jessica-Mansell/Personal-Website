@@ -17,7 +17,8 @@
 </small><br/>
 <hr>
 <br/>
-{{ post.body }}
+<!-- adding safe here will allow us to usse html within our blog post for custom formatting-->
+{{ post.body|safe }}
 
 
 <br/><br/>
