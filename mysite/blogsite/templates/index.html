@@ -8,7 +8,7 @@
     {% for post in object_list %}
         <!--Pull anything from the Post model to display whatever needed from the post-->
         <li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> 
-            - {{ post.category }}
+            - <a href="{% url 'category' post.category %}">{{ post.category }}</a>
             - {{ post.author.first_name }}
         {{ post.author.last_name }} - 
         {{ post.post_date }} <small>
