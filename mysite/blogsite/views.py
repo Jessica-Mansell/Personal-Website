@@ -1,4 +1,3 @@
-from unicodedata import category
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Category
@@ -18,8 +17,8 @@ class HomeView(ListView):
     ordering = ['-post_date']
 # cats is the name of the variable containing the string used in the urls.py file and this must match.
 def CategoryView(request, cats):
-    category_posts = Post.objects.filter(category=cats)
-    return render(request, 'categories.html', {'cats':cats.title(), 'category_posts':category_posts})
+    category_posts = Post.objects.filter(category=cats.title().replace('-', ' '))
+    return render(request, 'categories.html', {'cats':cats.title().replace('-', ' '), 'category_posts':category_posts})
 
 class ArticleDetailView(DetailView):
     model = Post
