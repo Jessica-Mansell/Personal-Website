@@ -4,17 +4,21 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h1>Update Post</h1>
-<br/>
-<br/>
-<div class="mb-3">
-    <form method="POST">
-        {% csrf_token %}
-        <!--as_p = html element of <p> for paragraph. can also use as_ul or as_table-->
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Update</button>
-    </form>
-</div>
+    {% if user.id == post.author.id %} 
+        <h1>Update Post</h1>
+        <br/>
+        <br/>
+        <div class="mb-3">
+            <form method="POST">
+                {% csrf_token %}
+                <!--as_p = html element of <p> for paragraph. can also use as_ul or as_table-->
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Update</button>
+            </form>
+        </div>
+    {% else %}
+        You are not allowed to edit posts without creating an account first! (Please hit Register or Login button above)
+    {% endif %}
 {% else %}
 
 You are not allowed to edit posts without creating an account first! (Please hit Register or Login button above)
