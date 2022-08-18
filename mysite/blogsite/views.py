@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Category
 from .forms import PostForm, EditForm
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 
 # ListView allows us to list a query set into the database or display multiple blog posts at once
 # DetailView only pulls a single item from the database or in this case one blog post per page
@@ -10,6 +11,11 @@ from django.urls import reverse_lazy
 # UpdateView lets us edit blog posts
 # DeleteView deletes the post
 # See more here: https://docs.djangoproject.com/en/4.1/ref/class-based-views/generic-display/
+def LikeView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('article-detail', args=[str(pk)]))
+
 
 class HomeView(ListView):
     model = Post
@@ -38,7 +44,11 @@ class ArticleDetailView(DetailView):
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
         context = super(ArticleDetailView, self).get_context_data(*args, **kwargs)
+
+        blug_stuff = get_object_or_404(Post, id=self.kwargs['pk'])
+        total_likes = blug_stuff.total_likes()
         context["cat_menu"] = cat_menu
+        context["total_likes"] = total_likes
         return context
 
 class AddPostView(CreateView):
