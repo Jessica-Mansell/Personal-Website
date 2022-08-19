@@ -12,6 +12,7 @@
             {% csrf_token %}
             <!--as_p = html element of <p> for paragraph. can also use as_ul or as_table-->
             {{ form.as_p }}
+            {{ form.media }}
             <button class="btn btn-secondary">Post</button>
         </form>
     </div>
