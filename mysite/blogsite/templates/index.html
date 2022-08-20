@@ -21,8 +21,8 @@
                         Delete</a>
                 {% endif %}
             {% endif %}
-                </small><br/>
-            {{ post.body|slice:":200"|safe }}</li>
+            </small><br/>
+            {{ post.snippet }}</li>
     {% endfor %}
     </ul>
     {% endblock %}

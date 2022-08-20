@@ -24,6 +24,7 @@ class Post(models.Model):
     category = models.CharField(max_length=255, default='Coding')
     # ManytoManyField to associate the Users to the Likes to the Posts
     # related_name is like a foreign key
+    snippet = models.CharField(max_length=255)
     likes = models.ManyToManyField(User, related_name='blog_posts')
 
     def total_likes(self):
