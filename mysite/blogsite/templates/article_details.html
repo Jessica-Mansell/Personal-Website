@@ -53,4 +53,33 @@
     - {{ total_likes }}
 </form>
 
+<br/>
+<br/>
+<div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-2">
+        <img src="{{ post.author.profile.profile_pic.url }}" class="img-fluid rounded-start">
+      </div>
+      <div class="col-md-10">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ post.author.first_name }} 
+            {{ post.author.last_name }}
+          </h5>
+          <p class="small text-muted">
+            {% if post.author.profile.linkedin_url %}
+                <a href="{{ post.author.profile.linkedin_url }}">LinkedIn</a> |
+            {% endif %}
+            {% if post.author.profile.github_url %}
+                <a href="{{ post.author.profile.github_url }}">GitHub</a>
+            {% endif %}
+          </p>
+          <p class="card-text">
+            {{ post.author.profile.bio }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
