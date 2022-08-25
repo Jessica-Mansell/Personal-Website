@@ -8,6 +8,12 @@ from django.urls import reverse_lazy
 from .forms import PasswordChangingForm, SignUpForm
 from blogsite.models import Profile
 
+class EditProfilePageView(generic.UpdateView):
+    model = Profile
+    template_name = 'registration/edit_profile_page.html'
+    fields = ['bio', 'profile_pic', 'website_url', 'linkedin_url', 'github_url']
+    success_url = reverse_lazy('home')
+
 class ShowProfilePageView(DetailView):
     model = Profile
     template_name = 'registration/user_profile_page.html'
