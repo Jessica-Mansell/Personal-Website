@@ -28,9 +28,9 @@
 {{ post.body|safe }}
 
 
-<br/><br/>
+<!-- <br/><br/>
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
-<br/><br/>
+<br/><br/> -->
 <hr>
 <br/><br/>
 <form action="{% url 'like_post' post.pk %}" method="POST">
@@ -51,7 +51,26 @@
 {% endif %}
     - {{ total_likes }}
 </form>
-
+<br/>
+<br/>
+<h2>Comments</h2>
+<br/>
+{% if not post.comments.all %}
+  No Comments yet <a href="#">Add a comment</a>
+{% else %}
+  {% for comment in post.comments.all %}
+    <strong>
+      {{ comment.name }} - 
+      {{ comment.date_added }}
+    </strong>
+  </br>
+      {{ comment.body }}
+      <br/>
+      <br/>
+      
+  {% endfor %}
+{% endif %}
+<hr>
 <br/>
 <br/>
 <div class="card mb-3">
