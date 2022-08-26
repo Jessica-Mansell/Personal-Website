@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Comment on Blog Post
+{% endblock %}
+{% block content %}
+
+    <h1>Add Comment</h1>
+    <br/>
+    <br/>
+    <div class="mb-3">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!--as_p = html element of <p> for paragraph. can also use as_ul or as_table-->
+            {{ form.as_p }}
+            <button class="btn btn-secondary">Add Comment</button>
+        </form>
+    </div>
+
+{% endblock %}

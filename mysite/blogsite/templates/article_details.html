@@ -53,23 +53,7 @@
 </form>
 <br/>
 <br/>
-<h2>Comments</h2>
-<br/>
-{% if not post.comments.all %}
-  No Comments yet <a href="#">Add a comment</a>
-{% else %}
-  {% for comment in post.comments.all %}
-    <strong>
-      {{ comment.name }} - 
-      {{ comment.date_added }}
-    </strong>
-  </br>
-      {{ comment.body }}
-      <br/>
-      <br/>
-      
-  {% endfor %}
-{% endif %}
+
 <hr>
 <br/>
 <br/>
@@ -113,5 +97,27 @@
       </div>
     </div>
   </div>
+</br>
+  <h2>Comments</h2>
+  <br/>
+  {% if not post.comments.all %}
+    No Comments yet <a href="{% url 'add_comment' post.pk %}">Add a comment</a>
+  {% else %}
+  <a href="{% url 'add_comment' post.pk %}"">Add Comment</a>
+</br>
+</br>
+    {% for comment in post.comments.all %}
+      <strong>
+        {{ comment.name }} - 
+        {{ comment.date_added }}
+      </strong>
+    </br>
+        {{ comment.body }}
+    <br/>
+    {% endfor %}
+      </br>
+      <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
+      </br>
+  {% endif %}
 
 {% endblock %}
