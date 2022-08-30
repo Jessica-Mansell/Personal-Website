@@ -16,62 +16,59 @@
     </title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg" style="background-color: hsl(317, 43%, 75%);">
+    <nav class="navbar navbar-expand-lg" style="background-color: hsl(317, 43%, 75%); color: #333131; text-decoration: none;">
       <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}">Jessica's Tech Blog</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: #333131; text-decoration: none;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="color: #333131; text-decoration: none;">
               <!--Category Menu Code-->
               {% if cat_menu %}
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <li class="nav-item dropdown" style="color: #333131; text-decoration: none;">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #333131; text-decoration: none;">
                   Categories
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" style="background-color: hsl(317, 43%, 75%); color: #333131; text-decoration: none;">
                   {% for item in cat_menu %}
-                  <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a></li>
+                  <li><a class="dropdown-item" href="{% url 'category' item|slugify %}" style="background-color: hsl(317, 43%, 75%); color: #333131; text-decoration: none;">{{ item }}</a></li>
                   {% endfor %}
                 </ul>
               </li>
               {% else %}
-              <li class="nav-item">
+              <li class="nav-item" style="background-color: hsl(317, 43%, 75%); color: #333131; text-decoration: none;">
                 <a class="nav-link" href="{% url 'category-list' %}">Categories</a>
               </li>
               {% endif %}
               {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
+                  <a class="nav-link" href="{% url 'add_post' %}" style="color: #333131; text-decoration: none;">Add Post</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'add_category' %}">Add Category</a>
+                  <a class="nav-link" href="{% url 'add_category' %}" style="color: #333131; text-decoration: none;">Add Category</a>
                 </li>
               {% else %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'register' %}">Register</a>
+                  <a class="nav-link" href="{% url 'register' %}" style="color: #333131; text-decoration: none;">Register</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                  <a class="nav-link" href="{% url 'login' %}" style="color: #333131; text-decoration: none;">Login</a>
                 </li>
               {% endif %}
             </ul>
             {% if user.is_authenticated %}
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #333131; text-decoration: none;">
                       {{ user.first_name }}
                       {{ user.last_name }}
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Edit Settings</a></li>
+                    <ul class="dropdown-menu dropdown-menu-right" style="background-color: hsl(317, 43%, 75%); color: #333131; text-decoration: none;">
+                      <li><a class="dropdown-item" href="{% url 'edit_profile' %}" style="color: #333131; text-decoration: none;">Edit Settings</a></li>
                       {% if user.profile.id %}
-                        <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}">Edit Profile Page</a></li>
-                        <li><a class="dropdown-item" href="{% url 'show_profile_page' user.profile.id %}">Show Profile Page</a></li>
-                        <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                        <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}" style="color: #333131; text-decoration: none;">Edit Profile Page</a></li>
+                        <li><a class="dropdown-item" href="{% url 'show_profile_page' user.profile.id %}" style="color: #333131; text-decoration: none;">Show Profile Page</a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}" style="color: #333131; text-decoration: none;">Logout</a></li>
                       {% else %}
-                      <li><a class="dropdown-item" href="{% url 'create_profile_page' %}">Create Profile Page</a></li>
+                      <li><a class="dropdown-item" href="{% url 'create_profile_page' %}" style="color: #333131; text-decoration: none;">Create Profile Page</a></li>
                       {% endif %}
                     </ul>
                   </li>
