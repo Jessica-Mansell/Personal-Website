@@ -1,0 +1,14 @@
+html body {
+    background-color: #8d8d8d;
+}
+
+html li {
+    list-style: none;
+}
+
+html a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
