@@ -7,6 +7,8 @@ from ckeditor.fields import RichTextField
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
+    class Meta:
+        verbose_name_plural = "Categories"
 
     def __str__(self):
         return self.name
@@ -37,7 +39,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
     post_date = models.DateField(auto_now_add=True)
-    category = models.CharField(max_length=255, default='Coding')
+    category= models.ForeignKey(Category, max_length=60, on_delete=models.CASCADE, related_name="catego")
     # ManytoManyField to associate the Users to the Likes to the Posts
     # related_name is like a foreign key
     snippet = models.CharField(max_length=255)
