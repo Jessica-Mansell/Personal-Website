@@ -11,7 +11,7 @@
     <!--fontawesome included for icon usage-->
     <script src="https://kit.fontawesome.com/f30ca1207d.js" crossorigin="anonymous"></script>
     <!--my own stylesheet-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'mysite/style.css' %}"/>
     <title>
         {% block title %}
             Jessica's Tech Blog
@@ -21,7 +21,7 @@
   <body>
     <nav class="navbar navbar-expand-lg" style="background-color: hsl(317, 43%, 75%); color: #333131; text-decoration: none;">
       <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'home' %}">Jessica's Tech Blog</a>
+          <a class="navbar-brand" id="title" href="{% url 'home' %}">Jessica's Tech Blog</a>
           <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: #333131; text-decoration: none;">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="color: #333131; text-decoration: none;">
               <!--Category Menu Code-->
