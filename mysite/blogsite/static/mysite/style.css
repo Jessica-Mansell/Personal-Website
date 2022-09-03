@@ -24,3 +24,7 @@ a:hover {
     font-family: 'Nunito Sans', sans-serif;
     text-decoration: none;
 }
+
+img#home_pics {
+    max-height: 400px;
+}
