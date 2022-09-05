@@ -25,6 +25,12 @@ a:hover {
     text-decoration: none;
 }
 
-img#home_pics {
-    max-height: 400px;
+img#home_pics.img-fluid {
+    max-height: 640px;
+    display: block;
+    margin: auto;
+  }
+
+h1 {
+    padding-top: 2rem;
 }
