@@ -39,3 +39,9 @@ h1 {
     color: #333131; 
     text-decoration: none;
 }
+
+#main_nav {
+    background-color: hsl(317, 43%, 75%);
+    background: linear-gradient(to bottom, #bf8fb1 0%, #a67b99 100%);
+    border-radius: 6px;
+}
