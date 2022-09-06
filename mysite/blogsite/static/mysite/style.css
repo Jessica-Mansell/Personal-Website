@@ -34,3 +34,8 @@ img#home_pics.img-fluid {
 h1 {
     padding-top: 2rem;
 }
+
+#cat_main {
+    color: #333131; 
+    text-decoration: none;
+}
