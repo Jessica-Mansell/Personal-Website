@@ -33,6 +33,7 @@ img#home_pics.img-fluid {
 
 h1 {
     padding-top: 2rem;
+    margin-left: 25px;
 }
 
 #cat_main {
@@ -50,4 +51,28 @@ h1 {
     background-color: rgba(0,0,0,.5);
     color: #fff;
     margin: auto;
+}
+
+#blank_form {
+    max-width: 835px;
+}
+
+#add_container {
+    margin-left: 25px;
+}
+
+#post_body_add {
+    max-width: 835px;
+}
+
+#snippet_add {
+    max-width: 835px;
+}
+
+p {
+    max-width: 835px;
+}
+
+label {
+    margin-bottom: 1rem;
 }
