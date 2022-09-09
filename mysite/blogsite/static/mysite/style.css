@@ -76,3 +76,7 @@ p {
 label {
     margin-bottom: 1rem;
 }
+
+#cat_button {
+    margin-left: 25px;
+}

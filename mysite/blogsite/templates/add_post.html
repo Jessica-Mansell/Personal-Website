@@ -5,7 +5,9 @@
 
 {% if user.is_authenticated %}
     <h1>Add Post</h1>
-    <button class="btn btn-secondary">Add New Category</button>
+    <br/>
+    <a href="{% url 'add_category' %}" class="btn btn-secondary" id="cat_button">Add New Category</a>
+    <br/>
     <br/>
     <div class="mb-3" id="add_container">
         <form method="POST" enctype="multipart/form-data">
