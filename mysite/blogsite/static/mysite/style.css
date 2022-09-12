@@ -3,8 +3,8 @@
     text-decoration: none;
 }
 
-body {
-    background-color: #8d8d8d;
+#title:hover {
+    color:aqua;
 }
 
 li {
@@ -17,7 +17,7 @@ a {
 }
 
 a:hover {
-    color:#8d8d8d;
+    text-decoration:#ffffff;
 }
 
 #navbarSupportedContent {
@@ -39,6 +39,7 @@ h1 {
 #cat_main {
     color: #333131; 
     text-decoration: none;
+    background: transparent;
 }
 
 #main_nav {
@@ -59,6 +60,7 @@ h1 {
 
 #add_container {
     margin-left: 25px;
+    background-color: #8d8d8d;
 }
 
 #post_body_add {
