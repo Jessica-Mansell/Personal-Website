@@ -42,6 +42,10 @@ h1 {
     background: transparent;
 }
 
+#cat_main:hover {
+    color:aqua;
+}
+
 #main_nav {
     background-color: hsl(317, 43%, 75%);
     background: linear-gradient(to bottom, #bf8fb1 0%, #a67b99 100%);
@@ -81,4 +85,41 @@ label {
 
 #cat_button {
     margin-left: 25px;
+}
+
+#post_add {
+    color: #333131; 
+    text-decoration: none;
+}
+
+#post_add:hover {
+    color:aqua;
+}
+
+#user_edit {
+    color: #333131; 
+    text-decoration: none;
+}
+
+#user_edit:hover {
+    color:aqua;
+}
+
+#user_edit_set {
+    text-decoration: none;
+    background-color: hsl(317, 43%, 75%);
+}
+
+#user_edit_set:hover {
+    color:aqua;
+}
+
+#new_user_items {
+    color: #333131; 
+    text-decoration: none;
+    background: transparent;
+}
+
+#new_user_items:hover {
+    color:aqua;
 }
