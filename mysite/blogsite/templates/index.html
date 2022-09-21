@@ -53,7 +53,7 @@
     <ul>
     {% for post in object_list %}
         <!--Pull anything from the Post model to display whatever needed from the post-->
-        <li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> 
+        <li><a href="{% url 'article-detail' post.pk %}" id="post_title">{{ post.title }}</a> 
             - <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
             - {{ post.author.first_name }}
         {{ post.author.last_name }} - 

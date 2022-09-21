@@ -123,3 +123,13 @@ label {
 #new_user_items:hover {
     color:aqua;
 }
+
+#post_title {
+    color: #333131; 
+    text-decoration: none;
+    background: transparent;
+}
+
+#post_title:hover {
+    color:aqua;
+}
