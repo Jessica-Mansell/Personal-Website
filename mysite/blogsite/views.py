@@ -37,7 +37,7 @@ class HomeView(ListView):
         
 # cats is the name of the variable containing the string used in the urls.py file and this must match.
 def CategoryView(request, cats):
-    category_posts = Post.objects.filter(category__iexact=cats.title().replace('-', ' '))
+    category_posts = Post.objects.filter(category__name__iexact=cats.title().replace('-', ' '))
     return render(request, 'categories.html', {'cats':cats.title().replace('-', ' '), 'category_posts':category_posts})
 
 def CategoryListView(request):
