@@ -10,16 +10,18 @@
     <form method="POST">
         {% csrf_token %}
         <div class="mb-3">
-            <input type="text" class="form-control" name="username" placeholder="Username">
+            <input type="text" class="form-control" id="login_entry" name="username" placeholder="Username">
         </div>
         <div class="mb-3">
-            <input type="password" class="form-control" name="password" placeholder="Password">
+            <input type="password" class="form-control" id="login_pass" name="password" placeholder="Password">
         </div>
     </br>
-        <button class="btn btn-secondary">Login</button>
+        <button class="btn btn-secondary" id="login_button">Login</button>
     </form>
 </div>
 </br>
-Not Registered? Sign up <a href="{% url 'register' %}">here.</a>
+<div id="login_text">Not Registered? Sign up 
+    <a href="{% url 'register' %}">here.</a>
+</div>
 
 {% endblock %}

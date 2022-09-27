@@ -133,3 +133,21 @@ label {
 #post_title:hover {
     color:aqua;
 }
+
+#login_entry {
+    width: 10%;
+    margin-left: 25px;
+}
+
+#login_pass {
+    width: 10%;
+    margin-left: 25px;
+}
+
+#login_button {
+    margin-left: 25px;
+}
+
+#login_text {
+    margin-left: 25px;
+}
