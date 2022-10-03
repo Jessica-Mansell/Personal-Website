@@ -4,27 +4,29 @@
 {% endblock %}
 {% block content %}
 <h1>{{ post.title }}</h1>
-<small>By: {{ post.author.first_name }} 
-    {{ post.author.last_name }} - 
-    {{ post.post_date }}
+<div id="author_tagline">
+  <small>By: {{ post.author.first_name }} 
+      {{ post.author.last_name }} - 
+      {{ post.post_date }}
 
-    {% if user.is_authenticated %}
+      {% if user.is_authenticated %}
 
-        {% if user.id == post.author.id %} 
-        - <a href="{% url 'update_post' post.pk %}">Edit</a>
+          {% if user.id == post.author.id %} 
+          - <a href="{% url 'update_post' post.pk %}" id="small_links">Edit</a>
 
-        <a href="{% url 'delete_post' post.pk %}">Delete</a>
-        {% endif %}
-    {% endif%}
-</small><br/>
+          <a href="{% url 'delete_post' post.pk %}" id="small_links">Delete</a>
+          {% endif %}
+      {% endif%}
+  </small>
+</div>
+<br/>
 <hr>
 <br/>
 {% if post.header_image %}
 <img src="{{ post.header_image.url }}">
 {% endif %}
 
-<br/><br/>
-<!-- adding safe here will allow us to usse html within our blog post for custom formatting-->
+<!-- adding safe here will allow us to use html within our blog post for custom formatting-->
 {{ post.body|safe }}
 
 
@@ -32,61 +34,58 @@
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
 <br/><br/> -->
 <hr>
-<br/><br/>
+<br/>
 <form action="{% url 'like_post' post.pk %}" method="POST">
     {% csrf_token %}
 {% if user.is_authenticated %}
     {% if liked %}
         <button type="submit", name="post_id", \
         value="{{ post.id }}", \
-        class="btn btn-danger btn-sm">Unlike</button> 
+        class="btn btn-danger btn-sm", \
+        id="like_button">Unlike</button> 
     {% else %}
         <button type="submit", name="post_id", \
         value="{{ post.id }}", \
-        class="btn btn-primary btn-sm">Like</button> 
+        class="btn btn-primary btn-sm", \
+        id="like_button">Like</button> 
     {% endif %}
 {% else %}
-    <small><a href="{% url 'login' %}">Login</a> to like</small>
-
+    <small><a href="{% url 'login' %}" id="unlogged_like">Login</a> to like</small>
 {% endif %}
     - {{ total_likes }}
 </form>
 <br/>
-<br/>
-
 <hr>
 <br/>
-<br/>
-<div class="card mb-3">
+<div class="card mb-3" id="author_card">
     <div class="row g-0">
       <div class="col-md-2">
 {% if post.author.profile.profile_pic %}
         <img src="{{ post.author.profile.profile_pic.url }}" class="card-img">
-
 {% else %}
         <i class="fa-solid fa-user fa-8x"></i>
 {% endif %}
       </div>
       <div class="col-md-10">
         <div class="card-body">
-          <h5 class="card-title">
+          <h5 class="card-title" id="blog_auth_title">
             {{ post.author.first_name }} 
             {{ post.author.last_name }}
           </h5>
           <p class="small text-muted">
 
-            <a href="{% url 'show_profile_page' post.author.profile.id %}">Profile Page</a>
+            <a href="{% url 'show_profile_page' post.author.profile.id %}" id="small_links">Profile Page</a>
 
             {% if post.author.profile.website_url %}
-              | <a href="{{ post.author.profile.website_url }}">Website</a>
+              | <a href="{{ post.author.profile.website_url }}" id="small_links">Website</a>
             {% endif %}
 
             {% if post.author.profile.linkedin_url %}
-              | <a href="{{ post.author.profile.linkedin_url }}">LinkedIn</a>
+              | <a href="{{ post.author.profile.linkedin_url }}" id="small_links">LinkedIn</a>
             {% endif %}
 
             {% if post.author.profile.github_url %}
-              | <a href="{{ post.author.profile.github_url }}">GitHub</a>
+              | <a href="{{ post.author.profile.github_url }}" id="small_links">GitHub</a>
             {% endif %}
 
           </p>
@@ -98,12 +97,13 @@
     </div>
   </div>
 </br>
-  <h2>Comments</h2>
+  <h2 id="Comments_title">Comments</h2>
   <br/>
   {% if not post.comments.all %}
-    No Comments yet <a href="{% url 'add_comment' post.pk %}">Add a comment</a>
+    <p id="No_comment">No Comments Yet!</p>
+    <a href="{% url 'add_comment' post.pk %}" id="Add_comment_small">Add a comment</a>
   {% else %}
-  <a href="{% url 'add_comment' post.pk %}"">Add Comment</a>
+  <a href="{% url 'add_comment' post.pk %}" id="Add_comment_small">Add Comment</a>
 </br>
 </br>
     {% for comment in post.comments.all %}
@@ -116,7 +116,7 @@
     <br/>
     {% endfor %}
       </br>
-      <a href="{% url 'add_comment' post.pk %}">Add Comment</a>
+      <a href="{% url 'add_comment' post.pk %}" id="Add_comment_small">Add Comment</a>
       </br>
   {% endif %}
 

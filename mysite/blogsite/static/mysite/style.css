@@ -77,6 +77,7 @@ h1 {
 
 p {
     max-width: 835px;
+    margin-left: 25px;
 }
 
 label {
@@ -150,4 +151,51 @@ label {
 
 #login_text {
     margin-left: 25px;
+}
+
+#author_tagline {
+    margin-left: 30px;
+}
+
+#like_button {
+    margin-left: 35px;   
+}
+
+#unlogged_like {
+    margin-left: 35px; 
+}
+
+#author_card {
+    background-color: hsl(317, 43%, 75%);
+}
+
+#blog_auth_title {
+    max-width: 835px;
+    margin-left: 25px;
+}
+
+#small_links {
+    text-decoration: none;
+}
+
+#small_links:hover {
+    color:aqua;
+}
+
+#Comments_title {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-left: 25px;
+}
+
+#No_comment {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-left: 25px;
+}
+#Add_comment_small {
+    font-family: 'Nunito Sans', sans-serif;
+    margin-left: 25px;
+}
+
+#Add_comment_small:hover {
+    color:aqua; 
 }
