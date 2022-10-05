@@ -199,3 +199,7 @@ label {
 #Add_comment_small:hover {
     color:aqua; 
 }
+
+textarea#id_bio {
+    min-width: 350px;
+}
