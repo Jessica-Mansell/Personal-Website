@@ -203,3 +203,11 @@ label {
 textarea#id_bio {
     min-width: 350px;
 }
+
+div.django-ckeditor-widget {
+    margin-left: 25px;
+}
+
+#main_button_style {
+    margin-left: 25px;
+}
