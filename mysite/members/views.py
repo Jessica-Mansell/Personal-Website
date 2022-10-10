@@ -1,10 +1,12 @@
 from cProfile import Profile
-from django.shortcuts import render, get_object_or_404
+from http.client import HTTPResponse
+from django.shortcuts import render, get_object_or_404, HttpResponse, HttpResponseRedirect
 from django.views import generic
 from django.views.generic import DetailView, CreateView
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
-from django.urls import reverse_lazy
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse_lazy, reverse
 from .forms import PasswordChangingForm, ProfilePageForm, SignUpForm
 from blogsite.models import Profile
 
@@ -55,3 +57,22 @@ class UserEditView(generic.UpdateView):
 
     def get_object(self):
         return self.request.user
+
+# #login auth handled here now:
+# def login_view(request):
+#     if request.method == "POST":
+#         # Attempt sign-in
+#         username = request.POST["username"]
+#         password = request.POST["password"]
+#         user = authenticate(request, username=username, password=password)
+#         # Check for auth success
+#         if user is not None:
+#             login(request, user)
+#             return HttpResponseRedirect(reverse("home"))
+#         else:
+#             return render(request, "registration/login.html", {
+#                 "message": "Invalid login details."
+#             })
+#     else:
+#         return render(request, "registration/login.html")
+
