@@ -109,6 +109,7 @@ label {
 #user_edit_set {
     text-decoration: none;
     background-color: hsl(317, 43%, 75%);
+    display: block;
 }
 
 #user_edit_set:hover {

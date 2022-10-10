@@ -35,5 +35,6 @@ Create a personal website which is also a blog in which I will cover topics I'm 
 - Edit_Profile_Page: Keep as a drop-down option in the User/Member info dropdown but, also make into a view when on the User Profile page with a button that says "Edit Profile". 
 - Edit_Profile: This is actually a Settings page for only the admin so, it can stay in case I decide to allow guest users in the future. This way I can easily shut-off access after guest user posts.
 - Change_Password: Can be turned into a view which opens when user clicks change password button on their Edit_Profile/Settings page.
-- 
+- Create_User_Profile: Ask user with an alert if they would like to enter their details in once logged in so it can redirect to this page when yes is chosen.
+- Password success: can be turned into an alert instead of a whole page.
 
