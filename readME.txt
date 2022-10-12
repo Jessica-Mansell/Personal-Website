@@ -38,3 +38,5 @@ Create a personal website which is also a blog in which I will cover topics I'm 
 - Create_User_Profile: Ask user with an alert if they would like to enter their details in once logged in so it can redirect to this page when yes is chosen.
 - Password success: can be turned into an alert instead of a whole page.
 
+#### This will need to be a new website as some of the elements will not be needed anyways. So this actual project will be a sandbox for styles. 
+
